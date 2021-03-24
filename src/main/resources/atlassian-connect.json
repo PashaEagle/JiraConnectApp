@@ -1,0 +1,48 @@
+{
+  "key": "${addon.key}",
+  "baseUrl": "${addon.base-url}",
+  "name": "HubSpot CRM integration",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "uninstalled": "/uninstalled",
+    "installed": "/installed"
+  },
+  "scopes": ["READ"],
+  "modules": {
+    "generalPages": [
+      {
+        "key": "activity",
+        "url": "/my-general-page",
+        "name": {
+          "value": "Activity"
+        }
+      }
+    ],
+    "jiraIssueGlances": [
+      {
+        "icon": {
+          "width": 20,
+          "height": 20,
+          "url": "/icon"
+        },
+        "content": {
+          "type": "label",
+          "label": {
+            "value": "Open linked contacts"
+          }
+        },
+        "target": {
+          "type": "web_panel",
+          "url": "/panel_url"
+        },
+        "jiraNativeAppsEnabled": false,
+        "name": {
+          "value": "HubSpot CRM"
+        },
+        "key": "my-issue-glance"
+      }
+    ]
+  }
+}
